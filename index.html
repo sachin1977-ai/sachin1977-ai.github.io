@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Daily - LeetCode Journey</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DSA Daily</h2>
+                <span>LeetCode Journey</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#problems">Problems</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#stats">Stats</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Daily LeetCode DSA Problems</h1>
+            <p>Tracking my journey of solving Data Structures and Algorithms problems every day</p>
+            <button class="cta-button" onclick="scrollToProblems()">View Problems</button>
+        </div>
+    </section>
+
+    <!-- Problem Form -->
+    <section class="problem-form">
+        <div class="container">
+            <h2>Add New Problem</h2>
+            <form id="problemForm">
+                <div class="form-group">
+                    <label for="problemTitle">Problem Title:</label>
+                    <input type="text" id="problemTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="problemLink">LeetCode Link:</label>
+                    <input type="url" id="problemLink" required>
+                </div>
+                <div class="form-group">
+                    <label for="problemDate">Date Solved:</label>
+                    <input type="date" id="problemDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="difficulty">Difficulty:</label>
+                    <select id="difficulty" required>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="solution">Solution Approach:</label>
+                    <textarea id="solution" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="timeComplexity">Time Complexity:</label>
+                    <input type="text" id="timeComplexity" placeholder="e.g., O(n)" required>
+                </div>
+                <div class="form-group">
+                    <label for="spaceComplexity">Space Complexity:</label>
+                    <input type="text" id="spaceComplexity" placeholder="e.g., O(1)" required>
+                </div>
+                <div class="form-group">
+                    <label for="tags">Tags (comma separated):</label>
+                    <input type="text" id="tags" placeholder="e.g., Array, Two Pointers, Hash Table">
+                </div>
+                <button type="submit" class="submit-btn">Add Problem</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section id="problems" class="problems">
+        <div class="container">
+            <h2>Solved Problems</h2>
+            <div class="filters">
+                <button class="filter-btn active" data-difficulty="all">All</button>
+                <button class="filter-btn" data-difficulty="easy">Easy</button>
+                <button class="filter-btn" data-difficulty="medium">Medium</button>
+                <button class="filter-btn" data-difficulty="hard">Hard</button>
+            </div>
+            <div id="problemsList" class="problems-list">
+                <!-- Problems will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="stats" class="statistics">
+        <div class="container">
+            <h2>Progress Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 id="totalProblems">0</h3>
+                    <p>Total Problems</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="easyProblems">0</h3>
+                    <p>Easy Problems</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="mediumProblems">0</h3>
+                    <p>Medium Problems</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="hardProblems">0</h3>
+                    <p>Hard Problems</p>
+                </div>
+            </div>
+            <div class="progress-chart">
+                <canvas id="progressChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About This Journey</h2>
+            <p>This blog documents my daily journey of solving Data Structures and Algorithms problems on LeetCode. 
+               The goal is to consistently improve problem-solving skills and track progress over time.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 DSA Daily Blog. Built with for coding practice.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
